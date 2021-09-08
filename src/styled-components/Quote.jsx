@@ -1,53 +1,70 @@
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const QuoteContainer = styled.div`
-  font-size: 2.2rem;
   font-family: 'AvenirMI';
-  transition: .2s cubic-bezier(0.65, 0.05, 0.36, 1);
-  padding: 1.6rem 0;
-  margin: 1.6rem 0;
-  border-top: 1px solid ${props => props.theme.orange};
-  border-bottom: 1px solid ${props => props.theme.orange};
-  p {
-    margin: 0;
+  margin-bottom: 1.2rem;
+  .quote {
+    .quoteBg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      display: flex;
+      transition: .8s cubic-bezier(0.65, 0.05, 0.36, 1);
+      opacity: 0;
+      z-index: -1;
+      background: url('/noise.png'), radial-gradient(circle, rgba(236,121,26,1) 35%, rgba(236,121,58,1) 65%);
+    }
+    p {   
+      margin: 0;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      transition: .8s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+  }
+  .quote__show {
+    p {
+      color: ${props => props.theme.black};
+    }
+    .quoteBg {
+      opacity: 1;
+    }
   }
 `;
 
 function Quote({children}) {
   const { ref, inView, entry } = useInView({
-    threshold: 1,
-    triggerOnce: true
+    threshold: 1
   });
+  const [show, setShow] = useState(false);
   useEffect(()=> {
     function showQuote() {
-      window.onscroll = ()=> {
-        if (entry) {
-          let objectBottom = entry.target.getBoundingClientRect().bottom;
-          let objectTop = entry.target.getBoundingClientRect().top;
-          let windowMiddle = window.innerHeight/2;
-          let twoOfThree = window.innerHeight - window.innerHeight / 3 * 2;
-          let fromView = window.innerHeight - objectTop;
-          let bgColor = document.getElementById('bgColor');
-          if (inView && fromView > twoOfThree && objectBottom > windowMiddle) {
-            bgColor.style.background= '#EC791A';
-            entry.target.style.color='#080808';
-          } else {
-            bgColor.removeAttribute('style');
-            entry.target.removeAttribute('style');
-          }
+      if (entry) {
+        let objectBottom = entry.target.getBoundingClientRect().bottom;
+        let objectTop = entry.target.getBoundingClientRect().top;
+        let windowMiddle = window.innerHeight/2;
+        let twoOfThree = window.innerHeight - window.innerHeight / 3 * 2;
+        let fromView = window.innerHeight - objectTop;
+        if (inView && fromView > twoOfThree && objectBottom > windowMiddle) {
+          setShow(true);
+        } else {
+          setShow(false);
         }
       }
     }
-    showQuote();
+    document.addEventListener('scroll', showQuote);
+    return ()=>{
+      document.removeEventListener('scroll', showQuote);
+    }
   }, [inView, entry]);
 
   return (
     <QuoteContainer ref={ref}>
-      <p>
-        {children}
-      </p>
+      <div className={`quote ${show && 'quote__show'}`}>
+        <div className='quoteBg'></div>
+        <p>{children}</p>
+      </div>
     </QuoteContainer>
   );
 }

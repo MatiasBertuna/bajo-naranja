@@ -56,7 +56,8 @@ const GlobalStyle = createGlobalStyle`
 
 const theme={
   orange: '#EC791A',
-  black: '#080808',
+  // orange: '#EC793A',
+  black: '#101010',
   white: 'white'
 }
 

@@ -5,7 +5,11 @@ const Wrapper = styled.div`
   padding-right: 2.4rem;
   p {
     margin-bottom: 1.2rem;
-    line-height: 2.2rem;
+    line-height: 2.4rem;
+  }
+  @media(min-width: 920px) {
+    width: 70%;
+    margin: auto;
   }
 `;
 

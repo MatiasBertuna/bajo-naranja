@@ -7,17 +7,17 @@ const HeroContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   h1 {
     font-family: AvenirB;
     font-size: 5.2rem;
     display: flex;
+    justify-content: center;
     span {
       opacity: 0;
+      color: ${props => props.theme.orange};
       transition: .1s cubic-bezier(0.65, 0.05, 0.36, 1);
     }
-  }
-  h1:nth-child(3) {
-    margin-top: auto;
   }
   .showTitle {
     opacity: 1;
@@ -34,11 +34,11 @@ function Hero() {
     window.onload= ()=> {
       let letters = document.getElementById('hero').getElementsByTagName('span');
       let arrayOfCharacters = ['a', 'b', 'e', 'f', 'i', 'j', 'm', 'n', 'o', 'r', 's', 't'];
-      let delayTime= 0.5;
+      let delayTime= 0;
       for (let i = 0; i < arrayOfCharacters.length; i++) {
         const letter = arrayOfCharacters[i];
         let spanByLetter = document.getElementsByClassName(letter);
-        delayTime = delayTime + 0.3;
+        delayTime = delayTime + 0.2;
         for (let l = 0; l < spanByLetter.length; l++) {
           const element = spanByLetter[l];
           element.style.transitionDelay= `${delayTime}s`;
@@ -54,7 +54,7 @@ function Hero() {
 
   return (
     <HeroContainer id='hero'>
-      <h1>
+      {/* <h1>
         <span className='b'>B</span>
         <span className='a'>a</span>
         <span className='j'>j</span>
@@ -68,7 +68,7 @@ function Hero() {
         <span className='n'>n</span>
         <span className='j'>j</span>
         <span className='a'>a</span>
-      </h1>
+      </h1> */}
       <h1>
         <span className='m'>M</span>
         <span className='a'>a</span>
