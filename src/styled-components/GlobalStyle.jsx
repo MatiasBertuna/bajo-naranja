@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${props => props.theme.black};
-    color: ${props => props.theme.orange};
+    color: ${props => props.theme.white};
   }
   *,
   :after,
@@ -45,9 +45,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: inherit;
     font-style: inherit;
   }
-  span {
-    display: block;
-  }
   button {
     font: inherit;
     border: none;
@@ -56,10 +53,8 @@ const GlobalStyle = createGlobalStyle`
 
 const theme={
   orange: '#EC791A',
-  // orange: '#EC793A',
   black: '#101010',
-  white: 'white'
+  white: '#ffffff'
 }
 
 export {GlobalStyle, theme};
-//#EC793A
