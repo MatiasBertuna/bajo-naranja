@@ -13,11 +13,11 @@ const ImgContainer = styled.div`
   }
 `;
 
-export default function ImgScroll() {
+export default function ImgScroll({source}) {
   const imgRef = useRef(null);
   useEffect(()=> {
     function translate() {
-        imgRef.current.style.transform= "rotate(" + window.scrollY/8 + "deg)";
+      imgRef.current.style.transform= "rotate(" + window.scrollY/8 + "deg)";
     }
     document.addEventListener('scroll', translate);
     return ()=> {
@@ -27,7 +27,7 @@ export default function ImgScroll() {
 
   return (
     <ImgContainer>
-      <img ref={imgRef} className='imgScroll' src='/imgs/skull.svg' alt=''/>
+      <img ref={imgRef} className='imgScroll' src={`/imgs/${source}`} alt=''/>
     </ImgContainer>
   );
 }

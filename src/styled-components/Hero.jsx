@@ -58,14 +58,14 @@ function Hero() {
         <img className='b' src='/imgs/letters/b.svg' alt=''/>
         <img className='a' src='/imgs/letters/a.svg' alt=''/>
         <img className='j' src='/imgs/letters/j.svg' alt=''/>
-        <img className='o' src='/imgs/letters/o.svg' alt=''/>
+        <img className='o' src='/imgs/letters/o1.svg' alt=''/>
       </div>
       <div className='heroText'>
-        <img className='n' src='/imgs/letters/n.svg' alt=''/>
-        <img className='a' src='/imgs/letters/a.svg' alt=''/>
+        <img className='n' src='/imgs/letters/n1.svg' alt=''/>
+        <img className='a' src='/imgs/letters/a2.svg' alt=''/>
         <img className='r' src='/imgs/letters/r.svg' alt=''/>
         <img className='a' src='/imgs/letters/a.svg' alt=''/>
-        <img className='n' src='/imgs/letters/n.svg' alt=''/>
+        <img className='n' src='/imgs/letters/n2.svg' alt=''/>
         <img className='j' src='/imgs/letters/j.svg' alt=''/>
         <img className='a' src='/imgs/letters/a.svg' alt=''/>
       </div>
