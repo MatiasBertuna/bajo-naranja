@@ -17,7 +17,7 @@ export default function ImgScroll() {
   const imgRef = useRef(null);
   useEffect(()=> {
     function translate() {
-        imgRef.current.style.transform= "rotate(" + window.scrollY/4 + "deg)";
+        imgRef.current.style.transform= "rotate(" + window.scrollY/8 + "deg)";
     }
     document.addEventListener('scroll', translate);
     return ()=> {

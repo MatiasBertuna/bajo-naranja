@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import AvenirR from '../fonts/Avenir/Regular.otf';
-import AvenirB from '../fonts/Avenir/Black.otf';
 import AvenirMI from '../fonts/Avenir/MediumItalic.otf';
 
 const GlobalStyle = createGlobalStyle`
@@ -11,10 +10,6 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'AvenirMI';
     src: url(${AvenirMI}) format('opentype');
-  }
-  @font-face {
-    font-family: 'AvenirB';
-    src: url(${AvenirB}) format('opentype');
   }
   html {
     -ms-text-size-adjust: 100%;

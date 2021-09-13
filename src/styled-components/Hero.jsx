@@ -20,6 +20,12 @@ const HeroContainer = styled.div`
       transition: .1s cubic-bezier(0.65, 0.05, 0.36, 1);
     }
   }
+  .heroText:nth-child(1) img {
+    width: calc(100% / 4);
+  }
+  .heroText:nth-child(2) img {
+    width: calc(100% / 7);
+  }
   .showTitle {
     opacity: 1 !important;
   }

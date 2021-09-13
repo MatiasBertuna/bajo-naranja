@@ -9,7 +9,6 @@ const FooterContainer = styled.footer`
   a {
     text-decoration: none;
     color: ${props => props.theme.orange};
-    font-family: 'AvenirMI';
     font-size: 2rem;
   }
 `;
@@ -17,7 +16,7 @@ const FooterContainer = styled.footer`
 function Footer() {
   return(
     <FooterContainer>
-      <a href='/'>( instagram )</a>
+      <a href='/'>instagram</a>
     </FooterContainer>
   );
 }
