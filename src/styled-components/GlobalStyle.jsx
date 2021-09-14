@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-size: 62.5%;
   }
+  ::selection {
+    background-color: ${props => props.theme.orange};
+    color: ${props => props.theme.black};
+  }
   body {
     margin: 0;
     padding: 0;

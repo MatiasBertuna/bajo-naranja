@@ -9,11 +9,12 @@ const FooterContainer = styled.footer`
   .instagram {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding-bottom: 3.2rem;
     a {
       display: contents;
       img {
-        width: calc(100% / 9);
+        width: calc(100% / 10);
         max-width: 25px;
       }
     }
@@ -24,8 +25,8 @@ const FooterContainer = styled.footer`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    opacity: .8;
     span, a {
-      opacity: .8;
       text-decoration: none;
       font-size: 1.4rem;
     }
@@ -50,8 +51,8 @@ function Footer() {
         <a href='/'><img src='/imgs/letters/m.svg' alt='' /></a>
       </div>
       <div className='info'>
-        <span>&copy; copyright {new Date().getFullYear()}</span>
-        <span>Made by: <a href='http://jstromanilz.vercel.app/'>jstromanilz</a></span>
+        <span>&copy; Bajo Naranja {new Date().getFullYear()}</span>
+        <span><span>Made by: </span><a href='http://jstromanilz.vercel.app/'>jstromanilz</a></span>
       </div>
     </FooterContainer>
   );
