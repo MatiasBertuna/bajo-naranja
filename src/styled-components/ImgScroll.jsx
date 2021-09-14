@@ -7,6 +7,7 @@ const ImgContainer = styled.div`
   .imgScroll {
     display: block;
     margin: auto;
+    padding: 3.2rem;
     width: 70%;
     object-fit: scale-down;
     max-width: 300px;

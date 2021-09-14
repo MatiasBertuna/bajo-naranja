@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'AvenirR', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${props => props.theme.black};
