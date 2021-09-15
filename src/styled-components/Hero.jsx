@@ -55,7 +55,7 @@ function Hero() {
   return (
     <HeroContainer id='hero' onLoad={showHero}>
       <div className='heroText'>
-        <img className='b' src='/imgs/letters/b.svg' alt=''/>
+        <img className='b' src='/imgs/letters/b1.svg' alt=''/>
         <img className='a' src='/imgs/letters/a.svg' alt=''/>
         <img className='j' src='/imgs/letters/j.svg' alt=''/>
         <img className='o' src='/imgs/letters/o1.svg' alt=''/>

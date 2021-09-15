@@ -19,21 +19,6 @@ const FooterContainer = styled.footer`
       }
     }
   }
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    opacity: .8;
-    span, a {
-      text-decoration: none;
-      font-size: 1.4rem;
-    }
-    a {
-      color: ${props => props.theme.orange};
-    }
-  }
 `;
 
 function Footer() {
@@ -45,14 +30,10 @@ function Footer() {
         <a href='/'><img src='/imgs/letters/s.svg' alt='' /></a>
         <a href='/'><img src='/imgs/letters/t.svg' alt='' /></a>
         <a href='/'><img src='/imgs/letters/a1.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/a1.svg' alt='' /></a>
+        <a href='/'><img src='/imgs/letters/g.svg' alt='' /></a>
         <a href='/'><img src='/imgs/letters/r.svg' alt='' /></a>
         <a href='/'><img src='/imgs/letters/a.svg' alt='' /></a>
         <a href='/'><img src='/imgs/letters/m.svg' alt='' /></a>
-      </div>
-      <div className='info'>
-        <span>&copy; Bajo Naranja {new Date().getFullYear()}</span>
-        <span><span>Made by: </span><a href='http://jstromanilz.vercel.app/'>jstromanilz</a></span>
       </div>
     </FooterContainer>
   );
