@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const HeroContainer = styled.div`
   padding-top: 2.4rem;
-  padding-bottom: 2.4rem;
-  height: 100vh;
+  padding-bottom: 3.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +10,7 @@ const HeroContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 1.6rem;
+    margin: 1.6rem 0;
     img {
       opacity: 0;
       display: block;
@@ -19,12 +18,41 @@ const HeroContainer = styled.div`
       width: calc(100% / 10);
       transition: .1s cubic-bezier(0.65, 0.05, 0.36, 1);
     }
+    .a:nth-child(even) {
+      transform: translateY(-10px);
+    }
+    .o {
+      transform: translateY(10px);
+    }
+    .i {
+      transform: translateY(-5px);
+    }
+    .e {
+      transform: translateY(15px);
+    }
+    .j:nth-child(odd) {
+      transform: rotate(-20deg);
+    }
+    .n:nth-child(1) {
+      transform: translateY(-20px);
+    }
+    .r {
+      transform: rotate(-10deg);
+    }
   }
   .heroText:nth-child(1) img {
-    width: calc(100% / 4);
+    width: calc(90% / 4);
+    max-width: 150px;
   }
   .heroText:nth-child(2) img {
     width: calc(100% / 7);
+    max-width: 100px;
+  }
+  .heroText:nth-child(3) {
+    margin-top: 3.2rem;
+    img {
+      width: calc(80% / 10);
+    }
   }
   .showTitle {
     opacity: 1 !important;

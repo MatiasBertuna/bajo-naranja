@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import AvenirR from '../fonts/Avenir/Regular.otf';
 import AvenirB from '../fonts/Avenir/Black.otf';
 import AvenirEB from '../fonts/Avenir/ExtraBold.otf';
-import AvenirMI from '../fonts/Avenir/MediumItalic.otf';
+import AvenirBI from '../fonts/Avenir/BoldItalic.otf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -18,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
     src: url(${AvenirEB}) format('opentype');
   }
   @font-face {
-    font-family: 'AvenirMI';
-    src: url(${AvenirMI}) format('opentype');
+    font-family: 'AvenirBI';
+    src: url(${AvenirBI}) format('opentype');
   }
   html {
     -ms-text-size-adjust: 100%;

@@ -40,32 +40,21 @@ const QuoteContainer = styled.span`
     height: 5px;
   }
   /* nuevo estilo */
-  .scratch:nth-child(3n+1) {
+  .strong {
     font-size: 3.2rem;
-    font-family: 'AvenirB';
-    line-height: 3.8rem;
-    transform: rotate(-5deg);
-  }
-  .scratch:nth-child(3n+2) {
-    font-size: 2rem;
-    line-height: 4rem;
-    letter-spacing: 2px;
-  }
-  .scratch:nth-child(3n+3) {
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    font-family: 'AvenirMI';
-    transform: rotate(3deg);
-  }
-  .circle {
     font-family: 'AvenirEB';
-    font-size: 2.8rem;
     line-height: 4rem;
+  }
+  .orange {
+    letter-spacing: 2px;
+    font-family: 'AvenirBI';
+    color: ${props => props.theme.orange};
   }
   .circle:before {
     content: '';
     position: absolute;
     inset: -.8rem -1rem -.4rem;
+    height: auto;
     border: 3px solid ${props => props.theme.orange};
     background: none;
     opacity: 0;
@@ -80,7 +69,7 @@ const QuoteContainer = styled.span`
   }
 `;
 
-function Quote({children, circle}) {
+function Quote({children, circle, strong, orange}) {
   const { ref, inView, entry } = useInView({
     threshold: 1
   });
@@ -97,19 +86,42 @@ function Quote({children, circle}) {
             const element = words[w];
             let span = document.createElement('span');
             span.innerHTML= `${element} `;
-            // check for circle words required
-            if (circle) {
-              for (let c = 0; c < circle.length; c++) {
-                const circleWord = circle[c];
-                if (element.includes(circleWord)) {
-                  span.classList.add('circle');
-                } else {
-                  span.classList.add('scratch');
+            if (circle || strong || orange) {
+              // check for circle words required
+              if (circle) {
+                for (let c = 0; c < circle.length; c++) {
+                  const circleWord = circle[c];
+                  if (element.includes(circleWord)) {
+                    span.classList.add('circle');
+                  } else {
+                    span.classList.add('scratch');
+                  }
                 }
               }
-            } 
-            // default markup
-            else {
+              // Check for strong words
+              if (strong) {
+                for (let s = 0; s < strong.length; s++) {
+                  const strongWord = strong[s];
+                  if (element.includes(strongWord)) {
+                    span.classList.add('strong');
+                    span.classList.add('scratch');
+                  } else {
+                    span.classList.add('scratch');
+                  }
+                }
+              }
+              if (orange) {
+                for (let b = 0; b < orange.length; b++) {
+                  const orangeWord = orange[b];
+                  if (element.includes(orangeWord)) {
+                    span.classList.add('orange');
+                    span.classList.add('scratch');
+                  } else {
+                    span.classList.add('scratch');
+                  }
+                }
+              }
+            } else {
               span.classList.add('scratch');
             }
             paragraph.appendChild(span);
@@ -137,7 +149,7 @@ function Quote({children, circle}) {
     return ()=>{
       document.removeEventListener('scroll', showQuote);
     }
-  }, [inView, entry, children, circle, text]);
+  }, [inView, entry, children, circle, text, strong, orange]);
 
   return (
     <QuoteContainer ref={ref} className={`${show ? 'showText' : null} ${topOfScreen ? 'textOnTop' : null}`} />
