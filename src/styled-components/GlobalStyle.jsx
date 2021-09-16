@@ -1,11 +1,21 @@
 import { createGlobalStyle } from 'styled-components';
 import AvenirR from '../fonts/Avenir/Regular.otf';
+import AvenirB from '../fonts/Avenir/Black.otf';
+import AvenirEB from '../fonts/Avenir/ExtraBold.otf';
 import AvenirMI from '../fonts/Avenir/MediumItalic.otf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'AvenirR';
     src: url(${AvenirR}) format('opentype');
+  }
+  @font-face {
+    font-family: 'AvenirB';
+    src: url(${AvenirB}) format('opentype');
+  }
+  @font-face {
+    font-family: 'AvenirEB';
+    src: url(${AvenirEB}) format('opentype');
   }
   @font-face {
     font-family: 'AvenirMI';

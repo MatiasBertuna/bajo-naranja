@@ -39,6 +39,29 @@ const QuoteContainer = styled.span`
     bottom: -.2rem;
     height: 5px;
   }
+  /* nuevo estilo */
+  .scratch:nth-child(3n+1) {
+    font-size: 3.2rem;
+    font-family: 'AvenirB';
+    line-height: 3.8rem;
+    transform: rotate(-5deg);
+  }
+  .scratch:nth-child(3n+2) {
+    font-size: 2rem;
+    line-height: 4rem;
+    letter-spacing: 2px;
+  }
+  .scratch:nth-child(3n+3) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-family: 'AvenirMI';
+    transform: rotate(3deg);
+  }
+  .circle {
+    font-family: 'AvenirEB';
+    font-size: 2.8rem;
+    line-height: 4rem;
+  }
   .circle:before {
     content: '';
     position: absolute;
