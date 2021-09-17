@@ -3,6 +3,8 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   padding-left: 2.4rem;
   padding-right: 2.4rem;
+  max-width: 1000px;
+  margin: auto;
   #textContainer {
     opacity: 0;
     transition: cubic-bezier(0.65, 0.05, 0.36, 1) .8s 2.4s;
@@ -28,10 +30,6 @@ const Wrapper = styled.div`
         }
       }
     }
-  }
-  @media(min-width: 920px) {
-    width: 70%;
-    margin: auto;
   }
 `;
 
