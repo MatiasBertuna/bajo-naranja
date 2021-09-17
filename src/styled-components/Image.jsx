@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const ImgContainer = styled.div`
   display: flex;
-  overflow: hidden;
   position: relative;
   margin: 3.2rem 0;
   .markUp {
