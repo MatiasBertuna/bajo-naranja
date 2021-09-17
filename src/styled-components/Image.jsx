@@ -7,6 +7,7 @@ const ImgContainer = styled.div`
   .markUp {
     height: 100%;
     width: 100%;
+    max-width: 600px;
     display: block;
     object-fit: contain;
     margin: auto;
@@ -23,11 +24,11 @@ const ImgContainer = styled.div`
   }
 `;
 
-export default function Image({source}) {
+export default function Image({source, background}) {
 
   return (
     <ImgContainer>
-      <img className='markUp' src='/imgs/marcacion.svg' alt='' />
+      <img className='markUp' src={`/imgs/${background}`} alt='' />
       <img className='image' src={`/imgs/${source}`} alt=''/>
     </ImgContainer>
   );
