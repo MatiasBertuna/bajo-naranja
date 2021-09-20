@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     opacity: 0;
     transition: cubic-bezier(0.65, 0.05, 0.36, 1) .8s 2.4s;
     p {
-      margin-bottom: 3.2rem;
+      margin-bottom: 2.4rem;
       line-height: 2.4rem;
       text-align: center;
       /* animations for keywords in Quote components */
