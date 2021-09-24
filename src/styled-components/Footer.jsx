@@ -13,10 +13,6 @@ const FooterContainer = styled.footer`
     padding-bottom: 3.2rem;
     a {
       display: contents;
-      ${'' /* img {
-        width: calc(100% / 10);
-        max-width: 25px;
-      } */}
       img {
         width: 55px;
       }
@@ -30,14 +26,6 @@ function Footer() {
     <FooterContainer>
       <div className='instagram'>
         <a href='/'><img src='/imgs/instagram.svg' alt='' /></a>
-        {/* <a href='/'><img src='/imgs/letters/n1.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/s.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/t.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/a1.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/g.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/r.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/a.svg' alt='' /></a>
-        <a href='/'><img src='/imgs/letters/m.svg' alt='' /></a> */}
       </div>
     </FooterContainer>
   );
