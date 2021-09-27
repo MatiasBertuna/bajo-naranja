@@ -25,7 +25,7 @@ function Footer() {
   return(
     <FooterContainer>
       <div className='instagram'>
-        <a href='/'><img src='/imgs/instagram.svg' alt='' /></a>
+        <a href='https://www.instagram.com/Bajo_Naranja/'><img src='/imgs/instagram.svg' alt='' /></a>
       </div>
     </FooterContainer>
   );
