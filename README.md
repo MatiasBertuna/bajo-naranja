@@ -8,8 +8,8 @@ Creación de una página web para ambientar el contenido de la película Bajo Na
 * 💅 styled-components.
 * 🔎 react-intersection-observer.
 ## 📷 Capturas:
-<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja1_qmzxtj.png'>
-<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja2_hgk5n2.png'>
-<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja3_l16qi8.png'>
+<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja1_qmzxtj.png'></img>
+<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja2_hgk5n2.png'></img>
+<img src='https://res.cloudinary.com/juanstromanilz/image/upload/v1632848263/Proyectos/Bajo%20Naranja/bajonaranja3_l16qi8.png'></img>
 ***
 [![Ver otros repos](https://img.shields.io/badge/-Ver%20otros%20repos-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanStromanIlz)
