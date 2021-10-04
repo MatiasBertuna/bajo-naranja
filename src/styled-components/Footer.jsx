@@ -5,11 +5,11 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2.4rem;
   .instagram {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: .8rem;
     padding-bottom: 3.2rem;
     a {
       display: contents;
