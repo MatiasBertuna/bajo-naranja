@@ -39,7 +39,10 @@ const QuoteContainer = styled.span`
     bottom: -.2rem;
     height: 5px;
   }
-  /* nuevo estilo */
+  .bgOrange {
+    background: ${props => props.theme.orange};
+    color: ${props => props.theme.black};
+  }
   .strong {
     font-size: 3.2rem;
     font-family: 'AvenirEB';
@@ -69,87 +72,69 @@ const QuoteContainer = styled.span`
   }
 `;
 
-function Quote({children, circle, strong, orange}) {
+function Quote({children, circle, strong, orange, bgOrange}) {
+  
   const { ref, inView, entry } = useInView({
     threshold: 1
   });
   const [show, setShow] = useState(false);
   const [text, setText] = useState(false);
   const [topOfScreen, setTopOfScreen] = useState(false);
+
   useEffect(()=> {
     function splitQuote() {
-      if (entry) {
-        let paragraph = entry.target;
-        if (paragraph) {
-          let words = children.split(" ");
-          for (let w = 0; w < words.length; w++) {
-            const element = words[w];
-            let span = document.createElement('span');
-            span.innerHTML= `${element} `;
-            if (circle || strong || orange) {
-              // check for circle words required
-              if (circle) {
-                for (let c = 0; c < circle.length; c++) {
-                  const circleWord = circle[c];
-                  if (element.includes(circleWord)) {
-                    span.classList.add('circle');
-                  } else {
-                    span.classList.add('scratch');
-                  }
-                }
-              }
-              // Check for strong words
-              if (strong) {
-                for (let s = 0; s < strong.length; s++) {
-                  const strongWord = strong[s];
-                  if (element.includes(strongWord)) {
-                    span.classList.add('strong');
-                    span.classList.add('scratch');
-                  } else {
-                    span.classList.add('scratch');
-                  }
-                }
-              }
-              if (orange) {
-                for (let b = 0; b < orange.length; b++) {
-                  const orangeWord = orange[b];
-                  if (element.includes(orangeWord)) {
-                    span.classList.add('orange');
-                    span.classList.add('scratch');
-                  } else {
-                    span.classList.add('scratch');
-                  }
-                }
-              }
-            } else {
-              span.classList.add('scratch');
-            }
-            paragraph.appendChild(span);
+
+      function searchInStyles(word, list, name) {
+        if (!list) {
+          return;
+        }
+        for (let i = 0; i < list.length; i++) {
+          const specialWord = list[i];
+          if (word.innerHTML.includes(specialWord)) {
+            word.classList.add(name);
           }
-          setText(true);
         }
       }
+
+      if (!entry) {
+        return;
+      }
+
+      let paragraph = entry.target;
+      let words = children.split(" ");
+      for (let w = 0; w < words.length; w++) {
+        let span = document.createElement('span');
+        span.innerHTML= `${words[w]} `;
+        span.classList.add('scratch');
+        searchInStyles(span, circle, 'circle');
+        searchInStyles(span, strong, 'strong');
+        searchInStyles(span, orange, 'orange');
+        searchInStyles(span, bgOrange, 'bgOrange');
+        paragraph.appendChild(span);
+      }
+      return setText(true);
     }
+
     function showQuote() {
-      if (entry) {
-        let bottom = entry.target.getBoundingClientRect().bottom;
-        let windowHeight = window.innerHeight / 4;
-        setTopOfScreen(bottom <= windowHeight);
-        if (inView) {
-          setShow(true);
-        } else {
-          setShow(false);
-        }
+      if (!entry && !inView) {
+        return setShow(false);
       }
+
+      let bottom = entry.target.getBoundingClientRect().bottom;
+      let windowHeight = window.innerHeight / 4;
+      setTopOfScreen(bottom <= windowHeight);
+      return setShow(true);
     }
+
     document.addEventListener('scroll', showQuote);
     if (!text) {
       splitQuote();
     }
+
     return ()=>{
       document.removeEventListener('scroll', showQuote);
     }
-  }, [inView, entry, children, circle, text, strong, orange]);
+  }, [inView, entry, children, circle, text, strong, orange, bgOrange]);
 
   return (
     <QuoteContainer ref={ref} className={`${show ? 'showText' : null} ${topOfScreen ? 'textOnTop' : null}`} />

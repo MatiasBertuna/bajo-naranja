@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  cursor: pointer;
   position: relative;
   display: block;
   background: transparent;
@@ -12,6 +14,8 @@ const Button = styled.button`
   margin-left: auto;
   padding: .4rem .8rem;
   color: white;
+  opacity: 0;
+  transition: cubic-bezier(0.65, 0.05, 0.36, 1) .8s 2.4s;
   ::before {
     content: '';
     position: absolute;
@@ -23,4 +27,15 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+export default function Language({onClick, children: language}) {
+
+  useEffect(() => {
+    (() => {
+      return document.getElementById('languageButton').style.opacity=1;
+    })();
+  }, [language]);
+
+  return (
+    <Button id='languageButton' onClick={onClick}>{language === 'english' ? 'español' : 'english'}</Button>
+  );
+}

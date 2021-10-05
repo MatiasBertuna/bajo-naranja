@@ -5,8 +5,8 @@ const Wrapper = styled.div`
   padding-right: 2.4rem;
   max-width: 1000px;
   margin: auto;
-  .textContainer {
-    ${'' /* opacity: 0; */}
+  #textContainer {
+    opacity: 0;
     transition: cubic-bezier(0.65, 0.05, 0.36, 1) .8s 2.4s;
     p {
       margin-bottom: 2.4rem;
