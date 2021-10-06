@@ -7,13 +7,12 @@ const Button = styled.button`
   display: block;
   background: transparent;
   border: none;
-  letter-spacing: .2rem;
   text-transform: lowercase;
   margin-top: 1.2rem;
   margin-right: 1.2rem;
   margin-left: auto;
   color: ${props => props.theme.white};
-  font-size: 1.4rem;
+  font-size: 1rem;
   opacity: 0;
   transition: cubic-bezier(0.65, 0.05, 0.36, 1) .8s 2.4s;
 `;
