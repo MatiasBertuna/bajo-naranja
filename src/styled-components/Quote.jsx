@@ -108,17 +108,32 @@ function Quote({children, circle, strong, orange, bgOrange}) {
         searchInStyles(span, bgOrange, 'bgOrange');
         paragraph.appendChild(span);
       }
-      return setText(true);
+      setText(true);
     }
 
     function showQuote() {
-      if (!entry || !inView) {
+
+      function isOnTopOfScreen(entry) {
+        let bottom = entry.target.getBoundingClientRect().bottom;
+        let windowHeight = window.innerHeight / 4;
+        return bottom <= windowHeight;
+      }
+
+      if (!entry) {
+        return;
+      }
+      if (!inView) {
         setShow(false);
       }
-      let bottom = entry.target.getBoundingClientRect().bottom;
-      let windowHeight = window.innerHeight / 4;
-      setTopOfScreen(bottom <= windowHeight);
-      setShow(true);
+      if (inView) {
+        setShow(true);
+      }
+      if (isOnTopOfScreen(entry)) {
+        setTopOfScreen(true);
+      }
+      if (!isOnTopOfScreen(entry)) {
+        setTopOfScreen(false);
+      }
     }
 
     document.addEventListener('scroll', showQuote);
