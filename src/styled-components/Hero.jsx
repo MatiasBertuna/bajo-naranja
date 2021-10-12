@@ -94,17 +94,20 @@ function Hero() {
   function showHero(){
     let letters = document.getElementById('hero').getElementsByTagName('img');
     let arrayOfCharacters = ['a', 'b', 'e', 'f', 'i', 'j', 'm', 'n', 'o', 'r', 's', 't'];
-    let delayTime= 0;
-    for (let i = 0; i < arrayOfCharacters.length; i++) {
-      const letter = arrayOfCharacters[i];
-      let spanByLetter = document.getElementsByClassName(letter);
-      delayTime = delayTime + 0.2;
-      for (let l = 0; l < spanByLetter.length; l++) {
-        const element = spanByLetter[l];
-        element.style.transitionDelay= `${delayTime}s`;
+
+    function addDelayToLetters(characters) {
+      let delayTime= 0;
+      for (let i = 0; i < characters.length; i++) {
+        let spanByLetter = document.getElementsByClassName(characters[i]);
+        delayTime = delayTime + 0.2;
+        for (let l = 0; l < spanByLetter.length; l++) {
+          spanByLetter[l].style.transitionDelay= `${delayTime}s`;
+        }
       }
-      
     }
+
+    addDelayToLetters(arrayOfCharacters);
+
     for (let i = 0; i < letters.length; i++) {
       const element = letters[i];
       element.classList.add('showTitle');

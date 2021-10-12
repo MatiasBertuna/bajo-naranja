@@ -32,6 +32,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.orange};
     color: ${props => props.theme.black};
   }
+  ::-webkit-scrollbar {
+    background: ${props => props.theme.black};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.orange};
+    border-radius: 70% 25% 50%;
+  }
   body {
     margin: 0;
     padding: 0;
@@ -42,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background: ${props => props.theme.black};
     color: ${props => props.theme.white};
+    cursor: url('/imgs/cursor.png'), auto;
   }
   *,
   :after,
