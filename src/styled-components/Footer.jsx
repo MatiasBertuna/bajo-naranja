@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: .8rem;
+    padding-top: 0.8rem;
     padding-bottom: 3.2rem;
     a {
       display: contents;
@@ -21,11 +21,12 @@ const FooterContainer = styled.footer`
 `;
 
 function Footer() {
-
-  return(
+  return (
     <FooterContainer>
-      <div className='instagram'>
-        <a href='https://www.instagram.com/Bajo_Naranja/'><img src='/imgs/instagram.svg' alt='' /></a>
+      <div className="instagram">
+        <a href="https://www.instagram.com/bajonaranja/">
+          <img src="/imgs/instagram.svg" alt="" />
+        </a>
       </div>
     </FooterContainer>
   );
