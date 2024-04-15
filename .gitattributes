@@ -1,0 +1,7 @@
+# Establecer la convención de fin de línea para los archivos .ts en el servidor
+servidor/*.ts text eol=lf
+
+# Establecer la convención de fin de línea para los archivos .js y .jsx en el cliente
+cliente/*.js text eol=crlf
+
+# Establecer la convención de fin de línea para otros tipos de archivos si es necesario
