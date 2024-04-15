@@ -1,6 +1,10 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 export const addUser = async (formData, language) => {
     try {
-        const response = await fetch("http://localhost:4200/usuarios/agregar", {
+        const response = await fetch( process.env.BACKEND_URL +"/usuarios/agregar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
