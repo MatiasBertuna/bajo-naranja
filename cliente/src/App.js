@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Redirect to='/lalora' />
+            <Redirect to='/manifiesto' />
           </Route>
           <Route exact path='/manifiesto' component={Manifiesto} />
           <Route exact path='/lalora' component={Lalora} />

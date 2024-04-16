@@ -17,7 +17,7 @@ class Server {
         this.config();
         this.routes();
     }
-    
+
     async config(): Promise<void> { // Modificamos el método config para que sea asíncrono
 
         //Configuraciones
@@ -25,7 +25,14 @@ class Server {
 
         //Middlewares
         this.app.use(morgan('dev'));
-        this.app.use(cors()); //iniciamos cors
+
+        const allowedOrigin = process.env.HTTP;
+        this.app.use(cors({
+            origin: allowedOrigin,
+            methods: ['GET', 'POST'],
+            allowedHeaders: ['Content-Type', 'Authorization'],
+        }));
+
         this.app.use(express.json()); //habilitamos el intercambio de objetos json entre aplicaciones
         this.app.use(express.urlencoded({ extended: false })); //habilitamos para recibir datos a traves de formularios html.
 

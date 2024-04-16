@@ -1,10 +1,7 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 export const addUser = async (formData, language) => {
     try {
-        const response = await fetch( process.env.BACKEND_URL +"/usuarios/agregar", {
+        const apiUrl = process.env.REACT_APP_API_URL; // Obtén la URL base desde la variable de entorno
+        const response = await fetch(`${apiUrl}/usuarios/agregar`, { // Utiliza la URL base para construir la solicitud
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
