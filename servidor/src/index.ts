@@ -26,12 +26,25 @@ class Server {
         //Middlewares
         this.app.use(morgan('dev'));
 
-        const allowedOrigin = process.env.HTTP;
+        const allowedOrigins = [
+            `http://${process.env.HTTP}`,
+            `https://${process.env.HTTP}`,
+            'http://localhost:3000',
+        ];
+
         this.app.use(cors({
-            origin: allowedOrigin,
+            origin: function (origin, callback) {
+                // Verifica si el origen de la solicitud está en la lista de orígenes permitidos
+                if (!origin || allowedOrigins.includes(origin)) {
+                    callback(null, true);
+                } else {
+                    callback(new Error('No permitido por CORS'));
+                }
+            },
             methods: ['GET', 'POST'],
             allowedHeaders: ['Content-Type', 'Authorization'],
         }));
+
 
         this.app.use(express.json()); //habilitamos el intercambio de objetos json entre aplicaciones
         this.app.use(express.urlencoded({ extended: false })); //habilitamos para recibir datos a traves de formularios html.

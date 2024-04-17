@@ -1,6 +1,6 @@
 export const addUser = async (formData, language) => {
     try {
-        const apiUrl = process.env.REACT_APP_API_URL; // Obtén la URL base desde la variable de entorno
+        const apiUrl = process.env.REACT_APP_API_URL_LOCAL; // Obtén la URL base desde la variable de entorno
         const response = await fetch(`${apiUrl}/usuarios/agregar`, { // Utiliza la URL base para construir la solicitud
             method: "POST",
             headers: {
@@ -8,6 +8,7 @@ export const addUser = async (formData, language) => {
             },
             body: JSON.stringify({ ...formData, language }), // Incluimos el idioma en el formData
         });
+        
         if (!response.ok) {
             throw new Error("No se pudo agregar el usuario");
         }

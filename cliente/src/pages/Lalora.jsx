@@ -82,6 +82,9 @@ function Lalora() {
 
     if (Object.values(newErrors).every((val) => val === "")) {
       try {
+        const apiUrl = process.env.REACT_APP_API_URL; // Obtén la URL base desde la variable de entorno
+        console.log(`La variable de entorno para el back es : ${apiUrl}`);
+        
         await addUser(formData, language); // Enviamos el idioma al backend
         setMessage(
           language === "español"
