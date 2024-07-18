@@ -7,8 +7,8 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from './styled-components/GlobalStyle';
 import Manifiesto from './pages/Manifiesto';
-import Lalora from './pages/Lalora';
-import Invitados from './pages/Invitados';
+//import Lalora from './pages/Lalora';
+//import Invitados from './pages/Invitados';
 
 function App() {
   return (
@@ -19,9 +19,13 @@ function App() {
           <Route exact path='/'>
             <Redirect to='/manifiesto' />
           </Route>
+          <Route exact path='/lalora'>
+            <Redirect to='/manifiesto' />
+          </Route>
+          <Route exact path='/invitados'>
+            <Redirect to='/manifiesto' />
+          </Route>
           <Route exact path='/manifiesto' component={Manifiesto} />
-          <Route exact path='/lalora' component={Lalora} />
-          <Route exact path='/invitados' component={Invitados} />
         </Switch>
       </Router>
     </ThemeProvider>
@@ -29,3 +33,8 @@ function App() {
 }
 
 export default App;
+
+/*
+          <Route exact path='/lalora' component={Lalora} />
+          <Route exact path='/invitados' component={Invitados} />
+*/

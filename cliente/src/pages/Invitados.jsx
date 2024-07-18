@@ -26,15 +26,17 @@ const Invitados = () => {
     return (
         <Wrapper>
             <div className="wrapper--max">
-                <h1 style={{ textAlign: 'center', marginTop: '40px' , marginBottom: '40px' }}>
-                    <Quote>
+                <h2 style={{ textAlign: 'center', marginTop: '20px' }}>
+                    <Quote strong={["Listado de Invitados"]}>
                         Listado de Invitados
                     </Quote>
-                </h1>
+                </h2>
+                {/* Utiliza InvitadoStyle para aplicar estilos específicos a la tabla */}
                 <Invitado>
                     <table>
                         <thead>
                             <tr>
+                                <th>N°</th> {/* Nueva columna para el número */}
                                 <th>
                                     <Quote>
                                         Nombre
@@ -49,8 +51,10 @@ const Invitados = () => {
                         </thead>
                         <tbody>
                             {/* Mapea la lista de usuarios y muestra cada usuario en una fila de la tabla */}
-                            {users.map(user => (
+                            {/*users.sort((a, b) => a.name.localeCompare(b.name)).map((user, index) => (*/}
+                            {users.map((user, index) => (
                                 <tr key={user._id}>
+                                    <td>{index + 1}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                 </tr>
